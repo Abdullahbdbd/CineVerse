@@ -1,13 +1,26 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const { user, logOut, loading } = use(AuthContext);
   const links = (
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/allMovies">All Movies</NavLink>
     </>
   );
+
+  const handleLogOut=()=>{
+    logOut()
+    .then(()=>{
+        toast.success('Log Out')
+    })
+    .catch(err=>{
+        toast.error(err.message)
+    })
+  }
 
   return (
     <div>
@@ -44,7 +57,15 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <Link to={'/login'} className="btn">login</Link>
+          {!loading && user ? (
+            <Link onClick={handleLogOut} className="btn">
+              log Out
+            </Link>
+          ) : (
+            <Link to={"/login"} className="btn">
+              login
+            </Link>
+          )}
         </div>
       </div>
     </div>

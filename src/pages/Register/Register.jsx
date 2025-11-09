@@ -15,12 +15,12 @@ const handleCreateUser=(e)=>{
     console.log(name, photo, email, password);
 
     createUser(email, password)
-    .then(res=>{
+    .then(()=>{
         toast.success('Register Complete')
         e.target.reset()
     })
     .catch(err=>{
-        toast.warning('some problem')
+        toast.warning(err.message)
     })
 
 

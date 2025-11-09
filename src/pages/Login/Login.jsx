@@ -13,12 +13,12 @@ const Login = () => {
         console.log(email, password);
     
         signIn(email, password)
-        .then(res=>{
+        .then(()=>{
             toast.success('Login Complete')
             e.target.reset()
         })
         .catch(err=>{
-            toast.warning('some problem')
+            toast.error(err.message)
         })
     
     
