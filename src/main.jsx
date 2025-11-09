@@ -10,6 +10,7 @@ import AllMovies from "./pages/AllMovies/AllMovies.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import Login from "./pages/Login/Login.jsx";
 import AuthProvider from "./context/AuthProvider/AuthProvider.jsx";
+import Register from "./pages/Register/Register.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         path: "/login",
         Component: Login,
       },
+      {
+        path:'/register',
+        Component: Register
+      }
     ],
   },
   {
