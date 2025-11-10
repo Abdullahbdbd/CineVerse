@@ -20,7 +20,7 @@ const Movie = ({ movie }) => {
              {genre}
             </span>
             {/* Rating */}
-            <div className="absolute bottom-2 right-2 bg-black/70 px-2 py-1 rounded flex items-center gap-1 text-yellow-400 text-sm font-semibold">
+            <div className="absolute bottom-2 right-2 bg-black/70 px-2 py-1 rounded flex items-center gap-1 text-yellow-400 text-xs ">
               <FaStar size={14} fill="currentColor" />
               {rating}
             </div>
