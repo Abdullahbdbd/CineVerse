@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user, logOut, loading } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
   const links = (
     <>
       <NavLink to="/">Home</NavLink>
@@ -57,7 +57,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          {!loading && user ? (
+
+
+          {user ? (
             <Link onClick={handleLogOut} className="btn">
               log Out
             </Link>

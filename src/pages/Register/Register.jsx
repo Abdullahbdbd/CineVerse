@@ -10,8 +10,8 @@ const Register = () => {
   // email and password register
   const handleCreateUser = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const photo = e.target.photo.value;
+    // const name = e.target.name.value;
+    // const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const upperCase = /(?=.*[A-Z])/;
