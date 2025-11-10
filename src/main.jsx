@@ -11,6 +11,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import Login from "./pages/Login/Login.jsx";
 import AuthProvider from "./context/AuthProvider/AuthProvider.jsx";
 import Register from "./pages/Register/Register.jsx";
+import MovieDetails from "./pages/MovieDetails/MovieDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,14 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "/allMovies",
+        path: "/movies",
         Component: AllMovies,
+      },
+      {
+        path:"/movies/:id",
+        loader:({params})=>fetch(`http://localhost:3000/movies/${params.id}`),
+        Component: MovieDetails
+
       },
       {
         path: "/login",
