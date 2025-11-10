@@ -1,12 +1,10 @@
-import React from "react";
-import { FaStar } from "react-icons/fa";
-import { Link } from "react-router";
+import React from 'react';
+import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
-const Movie = ({ movie }) => {
-  const { _id, title, posterUrl, rating, releaseYear, genre } = movie;
-
-  return (
-     
+const TopRatedMovie = ({movie}) => {
+     const { _id, title, posterUrl, rating, releaseYear, genre } = movie;
+    return (
         <div className="bg-[#111] text-white rounded-xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
           {/* Poster */}
           <div className="relative">
@@ -42,8 +40,7 @@ const Movie = ({ movie }) => {
             </Link>
           </div>
         </div>
-    
-  );
+    );
 };
 
-export default Movie;
+export default TopRatedMovie;

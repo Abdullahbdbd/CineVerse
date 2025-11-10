@@ -1,73 +1,75 @@
 .banner-container {
   width: 100%;
-  background-color: #0f0f0f;
+  background: radial-gradient(circle at center, #0f0f0f 0%, #000 100%);
   display: flex;
   justify-content: center;
   color: white;
-  padding: 30px 0;
+  padding: 50px 0;
   overflow-x: hidden;
 }
 
 .coverflowSwiper {
   width: 90%;
-  max-width: 1000px;
-  padding-bottom: 50px;
+  max-width: 1100px;
+  padding-bottom: 60px;
   overflow: visible !important;
   perspective: 1200px;
 }
 
 .coverflowSwiper .swiper-slide {
   transition: transform 0.8s ease, opacity 0.8s ease;
-  width: clamp(250px, 22vw, 300px) !important;
+  width: clamp(240px, 22vw, 300px) !important;
 }
 
 .movie-card {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #111;
 }
 
 .movie-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(255, 0, 0, 0.3);
 }
 
 .movie-poster {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  filter: brightness(0.9);
+  transition: transform 0.6s ease, filter 0.4s ease;
 }
 
 .movie-card:hover .movie-poster {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  filter: brightness(1);
 }
 
-/* Overlay hidden by default */
 .movie-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 20px 20px 30px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 25px 20px 35px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2));
   text-align: center;
-  opacity: 0; /* hidden initially */
-  pointer-events: none;
-  transition: opacity 0.4s ease; /* smooth fade-in */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.4s ease;
 }
 
-/* Show overlay on hover */
 .movie-card:hover .movie-overlay {
   opacity: 1;
-  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .movie-title {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 6px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .movie-meta {
@@ -87,22 +89,43 @@
 }
 
 .watch-btn {
-  margin-top: 10px;
+  margin-top: 14px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background-color: #e50914;
   color: white;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 0.9rem;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .watch-btn:hover {
   background-color: #b00610;
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .movie-poster {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-poster {
+    height: 260px;
+  }
+  .movie-title {
+    font-size: 1.1rem;
+  }
+  .watch-btn {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
 }
