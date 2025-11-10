@@ -4,56 +4,71 @@
   display: flex;
   justify-content: center;
   color: white;
-  padding: 50px 0;
+  padding: 60px 0;
   overflow-x: hidden;
 }
 
+/* Swiper container */
 .coverflowSwiper {
   width: 90%;
-  max-width: 1100px;
-  padding-bottom: 60px;
+  max-width: 1200px;
+  padding-bottom: 80px;
   overflow: visible !important;
-  perspective: 1200px;
+  perspective: 1500px;
 }
 
+/* Slide card */
 .coverflowSwiper .swiper-slide {
   transition: transform 0.8s ease, opacity 0.8s ease;
   width: clamp(240px, 22vw, 300px) !important;
+  filter: brightness(0.8);
+  transform-origin: center center;
+}
+
+.coverflowSwiper .swiper-slide-active {
+  filter: brightness(1);
+  transform: scale(1.1) translateZ(50px);
+}
+
+.coverflowSwiper .swiper-slide-prev,
+.coverflowSwiper .swiper-slide-next {
+  filter: brightness(0.9);
+  transform: scale(0.9) rotateY(-15deg);
 }
 
 .movie-card {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: #111;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .movie-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(255, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(255, 0, 0, 0.4);
 }
 
 .movie-poster {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  filter: brightness(0.9);
   transition: transform 0.6s ease, filter 0.4s ease;
 }
 
 .movie-card:hover .movie-poster {
-  transform: scale(1.06);
-  filter: brightness(1);
+  transform: scale(1.08);
+  filter: brightness(1.05);
 }
 
+/* Overlay Info */
 .movie-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 25px 20px 35px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.1));
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
@@ -107,10 +122,21 @@
 .watch-btn:hover {
   background-color: #b00610;
   transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.6);
 }
 
-/* Responsive Adjustments */
+/* Pagination dots */
+.swiper-pagination-bullet {
+  background: #ff2e2e !important;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff !important;
+  opacity: 1;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .movie-poster {
     height: 320px;

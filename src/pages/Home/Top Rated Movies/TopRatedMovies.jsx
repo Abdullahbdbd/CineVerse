@@ -3,10 +3,9 @@ import TopRatedMovie from "./TopRatedMovie";
 
 const TopRatedMovies = ({ topMoviePromise }) => {
   const allMovies = use(topMoviePromise);
-  console.log(allMovies);
 
   return (
-    <div className="w-[95%] mx-auto my-40">
+    <div className="my-20">
       <div className="mb-5 border-l-3 border-red-600">
         <h2 className="pl-2 font-medium text-xl">Top Rated Movies</h2>
       </div>
