@@ -28,7 +28,7 @@ const MovieDetails = () => {
             <img
               src={posterUrl}
               alt={title}
-              className="rounded-xl shadow-lg w-[80%] md:w-[75%] object-cover"
+              className="rounded-xl shadow-lg w-[80%] md:w-[75%] md:h-[350px] object-cover"
             />
           </div>
 
