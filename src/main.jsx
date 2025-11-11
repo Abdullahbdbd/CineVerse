@@ -14,6 +14,7 @@ import Register from "./pages/Register/Register.jsx";
 import MovieDetails from "./pages/MovieDetails/MovieDetails.jsx";
 import PrivateRoute from "./routes/PrivateRoute/PrivateRoute.jsx";
 import MyCollections from "./pages/MyCollection/MyCollections.jsx";
+import AddMovies from "./pages/AddMovie/AddMovies.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/myCollection",
         Component:MyCollections
+      },
+      {
+        path:'/addMovies',
+        Component: AddMovies
       },
       {
         path: "/login",
