@@ -1,8 +1,17 @@
-import React, { use } from 'react';
+import React, { useEffect, useState } from 'react';
 import LatestMovie from './LatestMovie';
 
-const LatestMovies = ({latestMoviesPromise}) => {
-    const latestMovies = use(latestMoviesPromise);
+const LatestMovies = () => {
+    const [latestMovies, setLatestMovies]=useState([])
+
+    useEffect(()=>{
+      fetch('http://localhost:3000/latestMovie')
+      .then(res=>res.json())
+      .then(data=>{
+        setLatestMovies(data)
+      })
+    },[])
+
     return (
          <div className="my-20">
       <div className="mb-5 border-l-3 border-red-600">

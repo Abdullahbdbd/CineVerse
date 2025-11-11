@@ -12,14 +12,13 @@ const topMoviePromise=fetch('http://localhost:3000/topMovies').then(res=>res.jso
 const actionMoviesPromise=fetch('http://localhost:3000/actionMovies').then(res=>res.json());
 const dramaMoviesPromise=fetch('http://localhost:3000/dramaMovies').then(res=>res.json());
 const adventureMoviesPromise=fetch('http://localhost:3000/adventureMovies').then(res=>res.json());
-const latestMoviesPromise=fetch('http://localhost:3000/latestMovie').then(res=>res.json());
 
 const Home = () => {
     return (
         <div className='w-[95%] mx-auto'>
             <Banner></Banner>
             <TopRatedMovies topMoviePromise={topMoviePromise}></TopRatedMovies>
-            <LatestMovies latestMoviesPromise={latestMoviesPromise}></LatestMovies>
+            <LatestMovies></LatestMovies>
             <ActionMovies actionMoviesPromise={actionMoviesPromise}></ActionMovies>
             <AdventureMovies adventureMoviesPromise={adventureMoviesPromise}></AdventureMovies>
             <DramaMovies dramaMoviesPromise={dramaMoviesPromise}></DramaMovies>
