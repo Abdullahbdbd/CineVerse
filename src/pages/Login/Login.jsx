@@ -18,6 +18,7 @@ const Login = () => {
       .then(() => {
         toast.success("Login Complete");
         e.target.reset();
+        navigate("/");
       })
       .catch((err) => {
         toast.error(err.message);

@@ -2,7 +2,7 @@
   {
     "title": "Inception",
     "genre": "Sci-Fi",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jul. 16, 2010",
     "director": "Christopher Nolan",
     "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt",
     "rating": 8.8,
@@ -11,12 +11,13 @@
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "The Dark Knight",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jul. 18, 2008",
     "director": "Christopher Nolan",
     "cast": "Christian Bale, Heath Ledger",
     "rating": 9.0,
@@ -25,12 +26,13 @@
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:01:00Z"
   },
   {
     "title": "Interstellar",
     "genre": "Adventure",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Nov. 7, 2014",
     "director": "Christopher Nolan",
     "cast": "Matthew McConaughey, Anne Hathaway",
     "rating": 8.6,
@@ -39,12 +41,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngBJ0B7UDrLUkDlp6DCQLsEYuWR-DiHwbnxFFCniB3HiP3f3NZmR1-lKSC34ge6YXu4LX&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:02:00Z"
   },
   {
     "title": "The Matrix",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Mar. 31, 1999",
     "director": "The Wachowskis",
     "cast": "Keanu Reeves, Laurence Fishburne",
     "rating": 8.7,
@@ -53,12 +56,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWXVvfvZR3oe7PCMM0exwV0dObOTKvLfSM-bjvKpQ1VegKXuCtq6aBrxqbIgUNxMbfavy&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:03:00Z"
   },
   {
     "title": "Fight Club",
     "genre": "Drama",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Oct. 15, 1999",
     "director": "David Fincher",
     "cast": "Brad Pitt, Edward Norton",
     "rating": 8.8,
@@ -67,12 +71,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_SpVkWXBnRsBBNbDaV8dur-3jlOi6fepmxBrYGkzDwHj-xtDGP4jySn7xvonE9lqNpBdRWg&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:04:00Z"
   },
   {
     "title": "Pulp Fiction",
     "genre": "Crime",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Oct. 14, 1994",
     "director": "Quentin Tarantino",
     "cast": "John Travolta, Uma Thurman",
     "rating": 8.9,
@@ -81,12 +86,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCqzGSUVlP74iyuFujryxWBYV6yqGirkn7BFHIJXEMzS4gNI-Z2wEKZsW6dLYA9B77BgyPdg&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:05:00Z"
   },
   {
     "title": "The Shawshank Redemption",
     "genre": "Drama",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Sep. 23, 1994",
     "director": "Frank Darabont",
     "cast": "Tim Robbins, Morgan Freeman",
     "rating": 9.3,
@@ -95,12 +101,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf1DK32xKMQzqSl8wnY1BLVu_gdwsRYzVSNM6A03r6c-fEwrif8raKzkFRuerw1KHdDICvOw&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:06:00Z"
   },
   {
     "title": "Forrest Gump",
     "genre": "Drama",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jul. 6, 1994",
     "director": "Robert Zemeckis",
     "cast": "Tom Hanks, Robin Wright",
     "rating": 8.8,
@@ -109,12 +116,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNI2SBzYW95C8Wo7zYV3bzVzem58xPnUzsZGLsnLg17mSMgR574acQZpgNK7a5XeF3THjqgQ&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:07:00Z"
   },
   {
     "title": "The Godfather",
     "genre": "Crime",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Mar. 24, 1972",
     "director": "Francis Ford Coppola",
     "cast": "Marlon Brando, Al Pacino",
     "rating": 9.2,
@@ -123,12 +131,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAY2xsJVIZxm3K0gNtOMr9CSCvLdr5kdo3V3pv2HMuUkTBhFzRe5-b8NDRmO1mt5S5Xp_YyQ&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:08:00Z"
   },
   {
     "title": "The Flash",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 16, 2023",
     "director": "Andy Muschietti",
     "cast": "Ezra Miller, Michael Keaton",
     "rating": 6.2,
@@ -137,12 +146,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlTCLSubZKO6c7ZFrKQPRBx5-RR6OnThjbEvA2SJsht8BqyJrFE3Zu-tx-AHlKOfZEY_ji&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:09:00Z"
   },
-  {
+   {
     "title": "Ant-Man and the Wasp: Quantumania",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Feb. 17, 2023",
     "director": "Peyton Reed",
     "cast": "Paul Rudd, Evangeline Lilly",
     "rating": 6.1,
@@ -151,12 +161,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDJQkj0ulGUOn1wpYDvxv6HsOz0pY0T2y6rKmua1lXoBs6Ym9tOYhFjRRXnJ2Zwg4lVBbRiQ&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:10:00Z"
   },
   {
     "title": "Guardians of the Galaxy Vol. 3",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "May 5, 2023",
     "director": "James Gunn",
     "cast": "Chris Pratt, Zoe Saldana",
     "rating": 8.1,
@@ -165,12 +176,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkyKX8165zgrg_ded57Dq66MKQsx7K8VNHyCB4u7Kbm5qJgv5Sh6WO-oPi2oCnsVbsRicm&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:11:00Z"
   },
   {
     "title": "Oppenheimer",
     "genre": "Biography",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jul. 21, 2023",
     "director": "Christopher Nolan",
     "cast": "Cillian Murphy, Emily Blunt",
     "rating": 8.5,
@@ -179,12 +191,13 @@
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:12:00Z"
   },
   {
     "title": "John Wick: Chapter 4",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Mar. 24, 2023",
     "director": "Chad Stahelski",
     "cast": "Keanu Reeves, Donnie Yen",
     "rating": 8.0,
@@ -193,12 +206,13 @@
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/d/d0/John_Wick_-_Chapter_4_promotional_poster.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:13:00Z"
   },
   {
     "title": "Barbie",
     "genre": "Adventure",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jul. 21, 2023",
     "director": "Greta Gerwig",
     "cast": "Margot Robbie, Ryan Gosling",
     "rating": 7.0,
@@ -207,12 +221,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROuK_Bl8jrLUP7fo3hsDC4XC2AC1WR1CAXS3G1SVqDPZE0pgFTQKnr8P2_cKmRuXg03nPE&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:14:00Z"
   },
   {
     "title": "Mission: Impossible – Dead Reckoning Part One",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jul. 12, 2023",
     "director": "Christopher McQuarrie",
     "cast": "Tom Cruise, Rebecca Ferguson",
     "rating": 7.6,
@@ -221,12 +236,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR34_otMSvSpe1Nn8Iip4kpkcaAHrUGaIITwQYC9iRIL4q34rHhTY2cTYrbRe303iD5fdsm&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:15:00Z"
   },
   {
     "title": "Transformers: Rise of the Beasts",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 9, 2023",
     "director": "Steven Caple Jr.",
     "cast": "Anthony Ramos, Dominique Fishback",
     "rating": 6.8,
@@ -235,12 +251,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEsFNeH_1HnJrtVLrbLdsdamTUTZwn7Kj9YBsSWiUHR4shBKafAY89uQwV_A0Z3Chj_ahPIA&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:16:00Z"
   },
   {
     "title": "The Marvels",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Nov. 10, 2023",
     "director": "Nia DaCosta",
     "cast": "Brie Larson, Iman Vellani",
     "rating": 7.1,
@@ -249,12 +266,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr2CHFXhorQkI9wP5KMf290fdqX7eRnl95P_BddZBIEuCqOAI7FYUnILfgo_ovnCK4ppeQyA&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:17:00Z"
   },
   {
     "title": "Wonka",
     "genre": "Adventure",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Dec. 15, 2023",
     "director": "Paul King",
     "cast": "Timothée Chalamet, Olivia Colman",
     "rating": 7.5,
@@ -263,12 +281,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrtRJVKVEsmsaq7eHik9Euw6hBfwEAwg_MmlBnp9013_31mmP6Ehp5rDyQ8-Ycr6ePyHVR&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:18:00Z"
   },
   {
     "title": "Spider-Man: No Way Home",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Dec. 17, 2021",
     "director": "Jon Watts",
     "cast": "Tom Holland, Zendaya",
     "rating": 8.4,
@@ -277,7 +296,8 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoBbV1cm1zPYG83x9vhcuLqS7zoD8Al52Bu-lGNIBk_q2r2yD3sOxV_oZwerMbBwZXVfse8Q&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:19:00Z"
   },
   {
     "title": "The Batman",
@@ -291,12 +311,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIMCpS3OjmxGAhuR99vetHATrUSMK2Cih6TB10Dnk9op5yB-y4DEVQsw9h3814Z8MirrCe&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:20:00Z"
   },
   {
     "title": "Avatar 2: The Way of Water",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 13, 2021",
     "director": "James Cameron",
     "cast": "Sam Worthington, Zoe Saldaña",
     "rating": 7.8,
@@ -305,12 +326,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxTA7S2fDMhUDVcZnuxuie2xE_ayntCdkCKme3EK3ObKXFuhdaLhYYTpzUHZ45-IQzQt6T&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:21:00Z"
   },
   {
     "title": "Thor: Love and Thunder",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 23, 2025",
     "director": "Taika Waititi",
     "cast": "Chris Hemsworth, Natalie Portman",
     "rating": 6.9,
@@ -319,12 +341,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ2BeC2ZXEyd0AAxWlwlrfbkc7uCgtL6o5A0b7PPCO1HxAuHp0Upa2SOkFEXFQc8TXFoND&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:22:00Z"
   },
   {
     "title": "Doctor Strange in the Multiverse of Madness",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 13, 2020",
     "director": "Sam Raimi",
     "cast": "Benedict Cumberbatch, Elizabeth Olsen",
     "rating": 7.0,
@@ -333,12 +356,13 @@
     "posterUrl": "https://m.media-amazon.com/images/M/MV5BN2YxZGRjMzYtZjE1ZC00MDI0LThjZmQtZTZmMzVmMmQ2NzBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:23:00Z"
   },
   {
     "title": "Black Adam",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 12, 2023",
     "director": "Jaume Collet-Serra",
     "cast": "Dwayne Johnson, Pierce Brosnan",
     "rating": 6.5,
@@ -347,7 +371,8 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnPpH-fjh4jBWgEaQw_xiUy3WQl0088Pl6KcCwFlCZhBkQSPspou7oDQRubwza_hE7_XszIg&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:24:00Z"
   },
   {
     "title": "Everything Everywhere All at Once",
@@ -361,12 +386,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW6n0N5NVFJhglILQYRF9hswb8iQ4lOw3cF2Qy7pH9aRPLZEnGW9cUbWYhyqTko_VJL7D8zQ&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:25:00Z"
   },
   {
     "title": "No Time to Die",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 03, 2015",
     "director": "Cary Joji Fukunaga",
     "cast": "Daniel Craig, Rami Malek",
     "rating": 7.3,
@@ -375,7 +401,8 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc7ssFT_S1H_U4_4WaUlBRNk6atWDYW9-BzDYY5JaopYPvLs0wvAQreo08HJ1pw65i7LAJZg&s=10",
     "language": "English",
     "country": "UK",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:26:00Z"
   },
   {
     "title": "Dune",
@@ -389,12 +416,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt7xlJEzb-xopDqcQ6iw9SbY8PAlJN8H7DYUzTqmZkwLT9o8JXv6YWvDMGRKwkyRnf6RHzGg&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:27:00Z"
   },
   {
     "title": "Top Gun: Maverick",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 13, 2015",
     "director": "Joseph Kosinski",
     "cast": "Tom Cruise, Miles Teller",
     "rating": 8.4,
@@ -403,12 +431,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEWEKrGjS-mQ_YGDUvlPjZQoLhZ084Cf-o2nBU7BkvZVUjJf8poO5BL0510QhJhhUxF9qK&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:28:00Z"
   },
   {
     "title": "Avatar",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 18, 2025",
     "director": "James Cameron",
     "cast": "Sam Worthington, Zoe Saldana",
     "rating": 7.8,
@@ -417,12 +446,13 @@
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/d/d6/Avatar_%282009_film%29_poster.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:29:00Z"
   },
   {
     "title": "Gladiator",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "May. 5, 2000",
     "director": "Ridley Scott",
     "cast": "Russell Crowe, Joaquin Phoenix",
     "rating": 8.5,
@@ -431,40 +461,43 @@
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/f/fb/Gladiator_%282000_film_poster%29.png",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "Jurassic Park",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Jun. 11, 1993",
     "director": "Steven Spielberg",
     "cast": "Sam Neill, Laura Dern, Jeff Goldblum",
     "rating": 8.1,
     "duration": 127,
-    "plotSummary": "A visionary billionaire creates a theme park populated with genetically cloned dinosaurs, inviting scientists and guests to witness this groundbreaking experiment. Experts, including Dr. Alan Grant, Dr. Ellie Sattler, and mathematician Ian Malcolm, assess the park’s safety. When security systems fail catastrophically, the dinosaurs escape containment, thrusting the group into life-or-death struggles against prehistoric predators. The story explores human hubris, the ethical consequences of scientific advancement, and the unpredictable power of nature. Characters must rely on intelligence, courage, and teamwork to survive. The narrative combines thrilling action, scientific intrigue, and awe-inspiring encounters, emphasizing respect for nature and the limitations of human control. As the humans confront creatures thought extinct, they face ethical dilemmas, moral choices, and the consequences of tampering with life. Through suspense, peril, and ingenuity, the film examines humanity’s ambition and the unforeseen outcomes of manipulating nature, blending adventure, horror, and philosophical reflection into a cinematic masterpiece.",
+    "plotSummary": "A visionary billionaire creates a theme park populated with genetically cloned dinosaurs, inviting scientists and guests to witness this groundbreaking experiment. Experts, including Dr. Alan Grant, Dr. Ellie Sattler, and mathematician Ian Malcolm, assess the park’s safety. When security systems fail catastrophically, the dinosaurs escape containment, thrusting the group into life-or-death struggles against prehistoric predators. The story explores human hubris, the ethical consequences of scientific advancement, and the unpredictable power of nature. Characters must rely on intelligence, courage, and teamwork to survive. The narrative combines thrilling action, scientific intrigue, and awe-inspiring encounters, emphasizing respect for nature and the limitations of human control.",
     "posterUrl": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "Titanic",
     "genre": "Drama",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Dec. 19, 1997",
     "director": "James Cameron",
     "cast": "Leonardo DiCaprio, Kate Winslet",
     "rating": 7.8,
     "duration": 195,
-    "plotSummary": "Aboard the ill-fated RMS Titanic, Jack Dawson, a poor artist, and Rose DeWitt Bukater, a wealthy young woman engaged to a controlling fiancé, form a deep, passionate connection despite social boundaries. Their romance unfolds amidst opulence, societal pressure, and the looming disaster. As they navigate class divisions, family expectations, and personal growth, they experience joy, freedom, and emotional awakening. When the Titanic strikes an iceberg, chaos ensues, and passengers face life-or-death decisions, revealing heroism, cowardice, and humanity’s resilience. Jack and Rose confront moral dilemmas, personal sacrifice, and mortality, deepening their bond. The story explores love, fate, mortality, and contrasts between privilege and adversity, emphasizing the enduring impact of choices, courage, and connection. Through stunning visuals, historical detail, and human storytelling, the film captures the grandeur, the intensity of forbidden love, and the profound tragedy of one of history’s greatest maritime disasters.",
+    "plotSummary": "Aboard the ill-fated RMS Titanic, Jack Dawson, a poor artist, and Rose DeWitt Bukater, a wealthy young woman engaged to a controlling fiancé, form a deep, passionate connection despite social boundaries. Their romance unfolds amidst opulence, societal pressure, and the looming disaster. As they navigate class divisions, family expectations, and personal growth, they experience joy, freedom, and emotional awakening. When the Titanic strikes an iceberg, chaos ensues, and passengers face life-or-death decisions, revealing heroism, cowardice, and humanity’s resilience. Jack and Rose confront moral dilemmas, personal sacrifice, and mortality, deepening their bond. The story explores love, fate, mortality, and contrasts between privilege and adversity, emphasizing the enduring impact of choices, courage, and connection.",
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlcQXin_CNozAFkv_SSihe5eZ_lvDD5nBqCmQT3xPf6KLlqHloIo5cBRGqwuy8pjuIiZrqoA&s=10",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "The Avengers",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "May. 4, 2012",
     "director": "Joss Whedon",
     "cast": "Robert Downey Jr., Chris Evans, Scarlett Johansson",
     "rating": 8.0,
@@ -473,26 +506,28 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR37Z-peMMSYOy1gmolMUnNCVlZhEB1VKQRjrv9J6gWbkCrqo_eOca1YRUT0714n27KqbVGyx4T5FicKC9suDAi-txdkgFFRorsGYhp5vU&s",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "Iron Man 3",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2013",
+    "releaseYear": "May. 3, 2013",
     "director": "James Cameron",
     "cast": "Sam Worthington, Zoe Saldaña",
     "rating": 7.7,
     "duration": 192,
     "plotSummary": "Years after the original Iron Man 3, Jake Sully and Neytiri have built a family and strive to protect Pandora while maintaining harmony with its environment. New threats force them to explore aquatic territories and interact with oceanic clans. They face ethical dilemmas, environmental hazards, and human invaders, requiring strategic thinking, courage, and unity. Themes of family, responsibility, cultural identity, and ecological stewardship are central. Relationships are tested through conflict, loss, and adaptation, highlighting resilience, courage, and collective action. The story combines breathtaking visuals, thrilling action, and emotional depth, emphasizing the bond between the Na’vi and their world. Through exploration, battles, and self-discovery, the family learns to balance personal bonds with the broader duty to protect Pandora, reinforcing sacrifice, perseverance, and the enduring fight to safeguard life.",
-    "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZt95XI-JD1diMWXtRuI0nsCdOwGsI54vu4_hKhZ8sFpD5Y1TI-1q4nGL91RJq3zHMM_MH3Q&s=10",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMjIzMzAzMjQyM15BMl5BanBnXkFtZTcwNzM2NjcyOQ@@._V1_FMjpg_UX1000_.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user2@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "Black Panther",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Feb. 16, 2018",
     "director": "Ryan Coogler",
     "cast": "Chadwick Boseman, Michael B. Jordan",
     "rating": 7.3,
@@ -501,12 +536,13 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbVjVIUH5hjvtYN7ZnXs6idhhVnbmkD_i_z-QO7hYkpZE4E11hQhf0rF4oRKU-0uVvmWw4rxqq_Z8IUfhS0dQAZyvCZ2D4iyu4rwjynME&s",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "Doctor Strange",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Nov. 4, 2016",
     "director": "Scott Derrickson",
     "cast": "Benedict Cumberbatch, Chiwetel Ejiofor",
     "rating": 7.5,
@@ -515,12 +551,13 @@
     "posterUrl": "https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_FMjpg_UX1000_.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user2@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "Guardians of the Galaxy",
     "genre": "Action",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "Aug. 1, 2014",
     "director": "James Gunn",
     "cast": "Chris Pratt, Zoe Saldana",
     "rating": 8.0,
@@ -529,12 +566,13 @@
     "posterUrl": "https://m.media-amazon.com/images/M/MV5BM2ZmNjQ2MzAtNDlhNi00MmQyLWJhZDMtNmJiMjFlOWY4MzcxXkEyXkFqcGc@._V1_.jpg",
     "language": "English",
     "country": "USA",
-    "addedBy": "user@example.com"
+    "addedBy": "user2@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   },
   {
     "title": "Doctor Who: The Movie",
     "genre": "Adventure",
-    "releaseYear": "Jun. 13, 2025",
+    "releaseYear": "May. 14, 1996",
     "director": "Geoffrey Sax",
     "cast": "Paul McGann, Daphne Ashbrook",
     "rating": 6.2,
@@ -543,6 +581,7 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZt95XI-JD1diMWXtRuI0nsCdOwGsI54vu4_hKhZ8sFpD5Y1TI-1q4nGL91RJq3zHMM_MH3Q&s=10",
     "language": "English",
     "country": "UK",
-    "addedBy": "user@example.com"
+    "addedBy": "user@example.com",
+    "created_at": "2025-11-11T01:00:00Z"
   }
 ]

@@ -12,6 +12,8 @@ import Login from "./pages/Login/Login.jsx";
 import AuthProvider from "./context/AuthProvider/AuthProvider.jsx";
 import Register from "./pages/Register/Register.jsx";
 import MovieDetails from "./pages/MovieDetails/MovieDetails.jsx";
+import PrivateRoute from "./routes/PrivateRoute/PrivateRoute.jsx";
+import MyCollections from "./pages/MyCollection/MyCollections.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,22 +26,34 @@ const router = createBrowserRouter([
       },
       {
         path: "/movies",
-        Component: AllMovies,
+        element: (
+          <PrivateRoute>
+            <AllMovies></AllMovies>
+          </PrivateRoute>
+        ),
       },
       {
-        path:"/movies/:id",
-        loader:({params})=>fetch(`http://localhost:3000/movies/${params.id}`),
-        Component: MovieDetails
-
+        path: "/movies/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/movies/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <MovieDetails></MovieDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myCollection",
+        Component:MyCollections
       },
       {
         path: "/login",
         Component: Login,
       },
       {
-        path:'/register',
-        Component: Register
-      }
+        path: "/register",
+        Component: Register,
+      },
     ],
   },
   {
