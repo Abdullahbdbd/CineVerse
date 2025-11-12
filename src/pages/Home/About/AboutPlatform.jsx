@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const AboutPlatform = () => {
   return (
-    <section className="text-white py-16 px-6 md:px-20">
+    <section className="text-white py-16 px-6 md:px-20 mt-32">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         {/* Left Side - Image with animation */}
         <div className="relative group">

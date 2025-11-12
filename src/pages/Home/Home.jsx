@@ -16,8 +16,9 @@ const adventureMoviesPromise=fetch('http://localhost:3000/adventureMovies').then
 
 const Home = () => {
     return (
-        <div className='w-[95%] mx-auto'>
-            <Banner></Banner>
+        <div>
+           <div className='w-[95%] mx-auto'>
+             <Banner></Banner>
             <Statistics></Statistics>
             <TopRatedMovies topMoviePromise={topMoviePromise}></TopRatedMovies>
             <LatestMovies></LatestMovies>
@@ -25,6 +26,7 @@ const Home = () => {
             <AdventureMovies adventureMoviesPromise={adventureMoviesPromise}></AdventureMovies>
             <DramaMovies dramaMoviesPromise={dramaMoviesPromise}></DramaMovies>
             <AboutPlatform></AboutPlatform>
+           </div>
             <Animation></Animation>
         </div>
     );
