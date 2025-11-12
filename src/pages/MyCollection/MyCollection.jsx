@@ -48,7 +48,7 @@ const MyCollection = ({ movie, onDelete }) => {
       {/* Buttons */}
       <div className="flex flex-row sm:flex-col gap-2 mt-3 sm:mt-0 sm:ml-4">
         <Link
-          to={`/update/${_id}`}
+          to={`/movies/update/${_id}`}
           className="bg-gray-700 hover:bg-gray-500 text-xs sm:text-sm px-4 py-2 rounded-lg transition font-medium"
         >
           Update

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const MyCollections = () => {
   const { user } = useContext(AuthContext);
   const [myColl, setMyColl] = useState([]);
+  
 
   useEffect(() => {
     if (user?.email) {
@@ -57,7 +58,7 @@ const MyCollections = () => {
   return (
     <div className="w-[70%] mx-auto mt-10">
       <h2 className="text-white text-2xl font-semibold mb-5">
-        My Collection
+        My Collection {myColl.length}
       </h2>
 
       <div>

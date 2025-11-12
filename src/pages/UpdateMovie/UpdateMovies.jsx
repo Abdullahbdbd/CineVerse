@@ -1,10 +1,25 @@
-import React, { use } from "react";
-import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import React, {  } from "react";
+import { useLoaderData } from "react-router";
 
-const AddMovies = () => {
-  const { user } = use(AuthContext);
+const UpdateMovies = () => {
+  const {
+    _id,
+    posterUrl,
+    title,
+    genre,
+    rating,
+    releaseYear,
+    duration,
+    cast,
+    director,
+    language,
+    country,
+    plotSummary,
+    addedBy,
+    created_at
+  } = useLoaderData();
 
-  const handleAddMovies = (e) => {
+  const handleUpdateMovies = (e) => {
     e.preventDefault();
     const form = e.target;
     const newMovie = {
@@ -19,12 +34,14 @@ const AddMovies = () => {
       language: form.language.value,
       country: form.country.value,
       plotSummary: form.plotSummary.value,
-      created_at: new Date(),
-      addedBy: user?.email
+      created_at: created_at,
+      addedBy: form.addedBy.value,
     };
+    console.log(newMovie);
+    
 
-    fetch("http://localhost:3000/movies", {
-      method: "POST",
+    fetch(`http://localhost:3000/movies/update/${_id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
@@ -33,16 +50,16 @@ const AddMovies = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        e.target.reset();      });
+      });
   };
 
   return (
     <div className="min-h-screen bg-[#0f0f0f] text-white flex justify-center items-center py-10">
       <form
-        onSubmit={handleAddMovies}
+        onSubmit={handleUpdateMovies}
         className="bg-[#1a1a1a] p-8 rounded-2xl w-[90%] max-w-3xl shadow-lg"
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Add New Movie</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Update Movie</h2>
 
         {/* Inputs grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -52,7 +69,7 @@ const AddMovies = () => {
               type="text"
               name="title"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Movie Title"
+              defaultValue={title}
             />
           </div>
 
@@ -62,7 +79,7 @@ const AddMovies = () => {
               type="text"
               name="genre"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Action, Drama"
+              defaultValue={genre}
             />
           </div>
 
@@ -72,7 +89,7 @@ const AddMovies = () => {
               type="number"
               name="releaseYear"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Year"
+              defaultValue={releaseYear}
             />
           </div>
 
@@ -82,7 +99,7 @@ const AddMovies = () => {
               type="text"
               name="director"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Director Name"
+              defaultValue={director}
             />
           </div>
 
@@ -92,7 +109,7 @@ const AddMovies = () => {
               type="text"
               name="cast"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Main Actors"
+              defaultValue={cast}
             />
           </div>
 
@@ -103,7 +120,7 @@ const AddMovies = () => {
               step="0.1"
               name="rating"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Rating"
+              defaultValue={rating}
             />
           </div>
 
@@ -113,7 +130,7 @@ const AddMovies = () => {
               type="number"
               name="duration"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Minute"
+              defaultValue={duration}
             />
           </div>
 
@@ -123,7 +140,7 @@ const AddMovies = () => {
               type="url"
               name="posterUrl"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="https://..."
+              defaultValue={posterUrl}
             />
           </div>
 
@@ -133,7 +150,7 @@ const AddMovies = () => {
               type="text"
               name="language"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Language"
+              defaultValue={language}
             />
           </div>
 
@@ -143,7 +160,18 @@ const AddMovies = () => {
               type="text"
               name="country"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              placeholder="Country Name"
+              defaultValue={country}
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm mb-1">AddedBy</label>
+            <input
+              type="email"
+              name="addedBy"
+              className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              defaultValue={addedBy}
+              readOnly
             />
           </div>
         </div>
@@ -155,7 +183,7 @@ const AddMovies = () => {
             name="plotSummary"
             rows="4"
             className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-            placeholder="Short movie description..."
+            defaultValue={plotSummary}
           ></textarea>
         </div>
 
@@ -165,7 +193,7 @@ const AddMovies = () => {
             type="submit"
             className="bg-red-600 hover:bg-red-800 px-6 py-2 rounded-lg font-semibold text-white transition"
           >
-            Add Movie
+            Update Movie
           </button>
         </div>
       </form>
@@ -173,4 +201,4 @@ const AddMovies = () => {
   );
 };
 
-export default AddMovies;
+export default UpdateMovies;

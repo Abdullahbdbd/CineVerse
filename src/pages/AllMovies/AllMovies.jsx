@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Movies from './Movies';
 
-const promise = fetch('http://localhost:3000/movies').then(res=>res.json());
-
 const AllMovies = () => {
+    const [allMovies, setAllMovies]=useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:3000/movies')
+        .then(res=>res.json())
+        .then(data=>{
+setAllMovies(data)
+        })
+    },[])
     return (
         <div className='w-[95%] mx-auto'>
            <div>
@@ -11,7 +18,7 @@ const AllMovies = () => {
            </div>
 
            <div>
-            <Movies promise={promise}></Movies>
+            <Movies allMovies={allMovies}></Movies>
            </div>
         </div>
     );
