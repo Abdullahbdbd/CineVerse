@@ -1,22 +1,31 @@
 import React from "react";
 import { FaStar, FaPlay, FaHeart, FaListUl } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const AboutPlatform = () => {
   return (
     <section className="text-white py-16 px-6 md:px-20">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        {/* Left Side - Image */}
-        <div>
-          <img
-            src="https://cdn.dribbble.com/users/1162077/screenshots/14166248/media/6a02cbff7f464b3f44b7c3b9c43b7aa1.png"
+        {/* Left Side - Image with animation */}
+        <div className="relative group">
+          {/* Background Glow */}
+          <div className="absolute -inset-4 bg-red-600 rounded-2xl blur-3xl opacity-20"></div>
+
+          {/* Motion Image */}
+          <motion.img
+            src="https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/ea/63/fa/ea63fa76-f6e9-f627-6098-7e7f459bc908/source/512x512bb.jpg"
             alt="MovieMaster UI"
-            className="rounded-2xl shadow-lg hover:scale-[1.02] transition-transform duration-300"
+            className="relative rounded-2xl shadow-2xl w-[85%] h-[85%] object-cover "
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
 
         {/* Right Side - Content */}
         <div className="text-justify">
-          <h2 className="text-3xl font-bold mb-4">About CineVerse-</h2>
+          <h2 className="text-3xl font-bold mb-4 border-l-4 border-red-600 pl-1.5">
+            About <span className="text-red-600">CineVerse-</span>
+          </h2>
           <p className="text-gray-400 mb-6 leading-relaxed">
             CineVerse is your ultimate movie companion — explore top-rated
             films, discover hidden gems, and track your favorites effortlessly.

@@ -8,7 +8,7 @@ const DramaMovie = ({movies}) => {
     return (
        <div>
       <Swiper
-        slidesPerView={5}
+        slidesPerView={5.5}
         spaceBetween={20}
         watchSlidesProgress={true}
         className="mySwiper"

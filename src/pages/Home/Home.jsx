@@ -7,6 +7,7 @@ import AdventureMovies from './Adventure Movies/AdventureMovies';
 import AboutPlatform from './About/AboutPlatform';
 import Animation from './Animation/Animation';
 import LatestMovies from './Latest Movie/LatestMovies';
+import Statistics from './Statistics/Statistics';
 
 const topMoviePromise=fetch('http://localhost:3000/topMovies').then(res=>res.json());
 const actionMoviesPromise=fetch('http://localhost:3000/actionMovies').then(res=>res.json());
@@ -17,6 +18,7 @@ const Home = () => {
     return (
         <div className='w-[95%] mx-auto'>
             <Banner></Banner>
+            <Statistics></Statistics>
             <TopRatedMovies topMoviePromise={topMoviePromise}></TopRatedMovies>
             <LatestMovies></LatestMovies>
             <ActionMovies actionMoviesPromise={actionMoviesPromise}></ActionMovies>

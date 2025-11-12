@@ -8,7 +8,6 @@ import "./Navbar.css";
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   console.log(user);
-  
 
   const handleLogOut = () => {
     logOut()
@@ -120,16 +119,18 @@ const Navbar = () => {
 
       {/* Navbar End */}
       <div className="navbar-end flex items-center gap-3 ml-auto">
-        {loading && <span className="loading loading-spinner text-error"></span>}
-          {!loading && user && (
-          <img
-            src={user.photoURL}
-            alt="User Avatar"
-            title={user.displayName}
-            className="w-10 h-10 rounded-full hover:scale-105 transition-transform duration-300"
+        {loading && (
+          <span className="loading loading-spinner text-error"></span>
+        )}
+        {!loading && user && (
+         <img
+         className="w-[35px] h-[35px] rounded-full"
+            src={user?.photoURL || user?.image || "https://i.ibb.co/3fJbMmp/default-avatar.png"}
+            alt={'Not Found'}
+            title={user?.displayName || user?.name || "User"}
           />
         )}
-        
+
         {user ? (
           <>
             <button

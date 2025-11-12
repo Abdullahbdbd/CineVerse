@@ -52,6 +52,7 @@ const AddMovies = () => {
               type="text"
               name="title"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Movie Title"
             />
           </div>
@@ -62,6 +63,7 @@ const AddMovies = () => {
               type="text"
               name="genre"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Action, Drama"
             />
           </div>
@@ -72,6 +74,7 @@ const AddMovies = () => {
               type="number"
               name="releaseYear"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Year"
             />
           </div>
@@ -82,6 +85,7 @@ const AddMovies = () => {
               type="text"
               name="director"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Director Name"
             />
           </div>
@@ -92,6 +96,7 @@ const AddMovies = () => {
               type="text"
               name="cast"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Main Actors"
             />
           </div>
@@ -103,6 +108,7 @@ const AddMovies = () => {
               step="0.1"
               name="rating"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Rating"
             />
           </div>
@@ -113,6 +119,7 @@ const AddMovies = () => {
               type="number"
               name="duration"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Minute"
             />
           </div>
@@ -123,6 +130,7 @@ const AddMovies = () => {
               type="url"
               name="posterUrl"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="https://..."
             />
           </div>
@@ -133,6 +141,7 @@ const AddMovies = () => {
               type="text"
               name="language"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Language"
             />
           </div>
@@ -143,6 +152,7 @@ const AddMovies = () => {
               type="text"
               name="country"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               placeholder="Country Name"
             />
           </div>
@@ -155,6 +165,7 @@ const AddMovies = () => {
             name="plotSummary"
             rows="4"
             className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+            required
             placeholder="Short movie description..."
           ></textarea>
         </div>

@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React from "react";
 import { useLoaderData } from "react-router";
 
 const UpdateMovies = () => {
@@ -16,16 +16,17 @@ const UpdateMovies = () => {
     country,
     plotSummary,
     addedBy,
-    created_at
+    created_at,
   } = useLoaderData();
 
   const handleUpdateMovies = (e) => {
     e.preventDefault();
     const form = e.target;
+
     const newMovie = {
       title: form.title.value,
       genre: form.genre.value,
-      releaseYear: form.releaseYear.value,
+      releaseYear: parseInt(form.releaseYear.value),
       director: form.director.value,
       cast: form.cast.value,
       rating: parseFloat(form.rating.value),
@@ -37,8 +38,6 @@ const UpdateMovies = () => {
       created_at: created_at,
       addedBy: form.addedBy.value,
     };
-    console.log(newMovie);
-    
 
     fetch(`http://localhost:3000/movies/update/${_id}`, {
       method: "PATCH",
@@ -49,8 +48,10 @@ const UpdateMovies = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-      });
+        console.log("Updated Movie:", data);
+        alert("Movie Updated Successfully!");
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
@@ -69,6 +70,7 @@ const UpdateMovies = () => {
               type="text"
               name="title"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={title}
             />
           </div>
@@ -79,6 +81,7 @@ const UpdateMovies = () => {
               type="text"
               name="genre"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={genre}
             />
           </div>
@@ -89,7 +92,8 @@ const UpdateMovies = () => {
               type="number"
               name="releaseYear"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
-              defaultValue={releaseYear}
+              required
+              defaultValue={parseInt(releaseYear)}
             />
           </div>
 
@@ -99,6 +103,7 @@ const UpdateMovies = () => {
               type="text"
               name="director"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={director}
             />
           </div>
@@ -109,6 +114,7 @@ const UpdateMovies = () => {
               type="text"
               name="cast"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={cast}
             />
           </div>
@@ -120,6 +126,7 @@ const UpdateMovies = () => {
               step="0.1"
               name="rating"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={rating}
             />
           </div>
@@ -130,6 +137,7 @@ const UpdateMovies = () => {
               type="number"
               name="duration"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={duration}
             />
           </div>
@@ -140,6 +148,7 @@ const UpdateMovies = () => {
               type="url"
               name="posterUrl"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={posterUrl}
             />
           </div>
@@ -150,6 +159,7 @@ const UpdateMovies = () => {
               type="text"
               name="language"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={language}
             />
           </div>
@@ -160,6 +170,7 @@ const UpdateMovies = () => {
               type="text"
               name="country"
               className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              required
               defaultValue={country}
             />
           </div>
@@ -169,7 +180,8 @@ const UpdateMovies = () => {
             <input
               type="email"
               name="addedBy"
-              className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+              className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none"
+              required
               defaultValue={addedBy}
               readOnly
             />
@@ -183,6 +195,7 @@ const UpdateMovies = () => {
             name="plotSummary"
             rows="4"
             className="w-full bg-[#111] border border-gray-700 rounded px-3 py-2 text-sm focus:outline-none focus:border-red-600"
+            required
             defaultValue={plotSummary}
           ></textarea>
         </div>
