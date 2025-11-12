@@ -37,7 +37,7 @@ const AddMovies = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white flex justify-center items-center py-10">
+    <div className="min-h-screen text-white flex justify-center items-center">
       <form
         onSubmit={handleAddMovies}
         className="bg-[#1a1a1a] p-8 rounded-2xl w-[90%] max-w-3xl shadow-lg"

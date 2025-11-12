@@ -1,0 +1,10 @@
+.nav-link{
+    margin: 0 5px;
+}
+
+.nav-link:hover {
+  color: red;
+}
+a.active{
+  border-bottom: 1.5px solid red;
+}

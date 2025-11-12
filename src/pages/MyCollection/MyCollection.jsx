@@ -17,7 +17,7 @@ const MyCollection = ({ movie, onDelete }) => {
   } = movie;
 
   return (
-    <div className="bg-[#111] text-white rounded-xl shadow-lg flex flex-col sm:flex-row items-center sm:items-stretch justify-between overflow-hidden hover:scale-[1.01] transition-transform duration-300 mb-4 p-3 sm:p-4">
+    <div className="text-white rounded-xl shadow-lg flex flex-col sm:flex-row items-center sm:items-stretch justify-between overflow-hidden hover:scale-[1.01] transition-transform duration-300 mb-4 p-3 sm:p-4">
       {/* Poster */}
       <div className="w-full sm:w-1/5 flex-shrink-0">
         <img

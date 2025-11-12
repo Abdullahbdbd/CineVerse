@@ -4,14 +4,14 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { createUser, googleSignIn } = use(AuthContext);
+  const { createUser, googleSignIn, setUser } = use(AuthContext);
   const navigate = useNavigate();
 
   // email and password register
   const handleCreateUser = (e) => {
     e.preventDefault();
-    // const name = e.target.name.value;
-    // const photo = e.target.photo.value;
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const upperCase = /(?=.*[A-Z])/;
@@ -31,7 +31,8 @@ const Register = () => {
     }
 
     createUser(email, password)
-      .then(() => {
+      .then((res) => {
+         setUser({ ...res.user, displayName: name, photoURL: photo });
         toast.success("Register Complete");
         e.target.reset();
         navigate("/");
@@ -44,7 +45,8 @@ const Register = () => {
   // google register
   const handleCreateGoogleUser = () => {
     googleSignIn()
-      .then(() => {
+      .then((res) => {
+        setUser(res.user)
         toast.success("Successful Google Register");
         navigate("/");
       })

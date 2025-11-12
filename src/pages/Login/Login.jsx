@@ -1,18 +1,18 @@
-import React, { use } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn, googleSignIn } = use(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // email and password login
+  // email & password login
   const handleSignIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
 
     signIn(email, password)
       .then(() => {
@@ -20,12 +20,10 @@ const Login = () => {
         e.target.reset();
         navigate("/");
       })
-      .catch((err) => {
-        toast.error(err.message);
-      });
+      .catch((err) => toast.error(err.message));
   };
 
-  // google login
+  // Google login
   const handleGoogleLogin = () => {
     googleSignIn()
       .then(() => {
@@ -34,75 +32,73 @@ const Login = () => {
       })
       .catch((err) => toast.error(err.message));
   };
+
   return (
-    <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl">
-      <div className="card-body">
-        <form onSubmit={handleSignIn}>
-          <fieldset className="fieldset">
-            {/* email  */}
-            <label className="label">Email</label>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0f0f0f] to-[#111] px-4">
+      <div className="w-full max-w-md bg-[#1a1a1a] shadow-2xl rounded-xl p-8 text-white">
+        <h2 className="text-3xl font-bold text-center mb-6">Welcome Back</h2>
+
+        <form onSubmit={handleSignIn} className="space-y-4">
+          {/* Email */}
+          <div>
+            <label className="block mb-1 text-gray-300">Email</label>
             <input
               type="email"
               name="email"
-              className="input"
-              placeholder="Your Email"
+              placeholder="you@example.com"
               required
+              className="w-full px-4 py-2 rounded-lg bg-[#222] text-white focus:outline-none focus:ring-2 focus:ring-red-600"
             />
+          </div>
 
-            {/* password */}
-            <label className="label">Password</label>
+          {/* Password */}
+          <div>
+            <label className="block mb-1 text-gray-300">Password</label>
             <input
               type="password"
               name="password"
-              className="input"
-              placeholder="Your Password"
+              placeholder="Your password"
               required
+              className="w-full px-4 py-2 rounded-lg bg-[#222] text-white focus:outline-none focus:ring-2 focus:ring-red-600"
             />
-            <div>
-              <a className="link link-hover">Forgot password?</a>
-            </div>
-            <button className="btn btn-neutral mt-4">Login</button>
+          </div>
 
-            {/* Google */}
-            <button
-              onClick={handleGoogleLogin}
-              className="btn bg-white text-black border-[#e5e5e5]"
-            >
-              <svg
-                aria-label="Google logo"
-                width="16"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <g>
-                  <path d="m0 0H512V512H0" fill="#fff"></path>
-                  <path
-                    fill="#34a853"
-                    d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"
-                  ></path>
-                  <path
-                    fill="#4285f4"
-                    d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"
-                  ></path>
-                  <path
-                    fill="#fbbc02"
-                    d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"
-                  ></path>
-                  <path
-                    fill="#ea4335"
-                    d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"
-                  ></path>
-                </g>
-              </svg>
-              Login with Google
-            </button>
-          </fieldset>
+          {/* Forgot Password */}
+          <div className="text-right">
+            <a href="#" className="text-red-500 hover:underline text-sm">
+              Forgot password?
+            </a>
+          </div>
+
+          {/* Login Button */}
+          <button
+            type="submit"
+            className="w-full py-2 bg-red-600 hover:bg-red-700 rounded-lg font-semibold text-white transition-all"
+          >
+            Login
+          </button>
+
+          {/* Divider */}
+          <div className="flex items-center justify-center my-2 text-gray-500">
+            <span className="border-b border-gray-600 w-full mr-2"></span>
+            <span className="text-sm">or</span>
+            <span className="border-b border-gray-600 w-full ml-2"></span>
+          </div>
+
+          {/* Google Login */}
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition-all"
+          >
+            <FaGoogle className="text-red-600" /> Login with Google
+          </button>
         </form>
 
-        <p className="text-sm">
-          Don't have an account?
-          <Link to="/register" className="text-blue-500 underline">
+        {/* Register Link */}
+        <p className="mt-6 text-center text-gray-400">
+          Don't have an account?{" "}
+          <Link to="/register" className="text-red-500 font-semibold hover:underline">
             Register
           </Link>
         </p>

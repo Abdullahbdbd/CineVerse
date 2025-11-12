@@ -165,7 +165,7 @@ const UpdateMovies = () => {
           </div>
 
           <div>
-            <label className="block text-sm mb-1">AddedBy</label>
+            <label className="block text-sm mb-1">Added By</label>
             <input
               type="email"
               name="addedBy"

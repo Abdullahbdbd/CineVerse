@@ -1,10 +1,9 @@
 .banner-container {
   width: 100%;
-  background: radial-gradient(circle at center, #0f0f0f 0%, #000 100%);
   display: flex;
   justify-content: center;
   color: white;
-  padding: 60px 0;
+  padding: 20px 0;
   overflow-x: hidden;
 }
 

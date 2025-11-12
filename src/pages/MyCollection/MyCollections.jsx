@@ -56,7 +56,7 @@ const MyCollections = () => {
   };
 
   return (
-    <div className="w-[70%] mx-auto mt-10">
+    <div className="w-[70%] mx-auto">
       <h2 className="text-white text-2xl font-semibold mb-5">
         My Collection {myColl.length}
       </h2>
