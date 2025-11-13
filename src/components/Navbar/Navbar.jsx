@@ -6,9 +6,7 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  console.log(user);
-  
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark"); // default dark
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -52,7 +50,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar fixed top-0 left-0 z-50 backdrop-blur-lg bg-black/40 border-b border-white/10 shadow-lg px-4">
+    <div className="navbar fixed top-0 left-0 z-50 backdrop-blur-lg bg-black/40 border-b border-white/10 shadow-lg px-4 transition-colors duration-300">
       {/* Navbar Start */}
       <div className="navbar-start flex items-center gap-2">
         {/* Hamburger menu */}
@@ -79,16 +77,14 @@ const Navbar = () => {
           >
             {links}
             {user ? (
-              <>
-                <li className="mt-2">
-                  <button
-                    onClick={handleLogOut}
-                    className="w-full text-left px-2 py-1 text-sm rounded-md bg-red-600 hover:bg-red-700 text-white transition-all"
-                  >
-                    Log Out
-                  </button>
-                </li>
-              </>
+              <li className="mt-2">
+                <button
+                  onClick={handleLogOut}
+                  className="w-full text-left px-2 py-1 text-sm rounded-md bg-red-600 hover:bg-red-700 text-white transition-all"
+                >
+                  Log Out
+                </button>
+              </li>
             ) : (
               <li className="flex gap-2 mt-2">
                 <NavLink
@@ -131,15 +127,14 @@ const Navbar = () => {
 
       {/* Navbar End */}
       <div className="navbar-end flex items-center gap-3 ml-auto relative">
-        <label className="toggle text-base-content">
+        {/* Theme Toggle */}
+        <label className="toggle text-base-content cursor-pointer">
           <input
-            onChange={(e) => handleTheme(e.target.checked)}
             type="checkbox"
-            defaultChecked={localStorage.getItem("theme") === "dark"}
-            value="synthwave"
             className="theme-controller"
+            checked={theme === "dark"}
+            onChange={(e) => handleTheme(e.target.checked)}
           />
-
           <svg
             aria-label="sun"
             xmlns="http://www.w3.org/2000/svg"
@@ -181,17 +176,19 @@ const Navbar = () => {
           </svg>
         </label>
 
+        {/* Loading Spinner */}
         {loading && (
           <span className="loading loading-spinner text-error"></span>
         )}
 
+        {/* User Dropdown */}
         {!loading && user && (
           <div className="relative">
             <button
               onClick={() => setOpen(!open)}
               className="w-[35px] h-[35px] rounded-full overflow-hidden border-2 border-red-600 focus:outline-none"
             >
-              {user && user.photoURL ? (
+              {user.photoURL ? (
                 <img
                   src={user.photoURL}
                   title={user.displayName}
@@ -202,7 +199,6 @@ const Navbar = () => {
               )}
             </button>
 
-            {/* Dropdown Menu */}
             {open && (
               <ul className="absolute right-0 mt-2 w-44 bg-[#1a1a1a] rounded-lg shadow-lg z-50 overflow-hidden">
                 <li>
@@ -223,7 +219,6 @@ const Navbar = () => {
                     My Collection
                   </Link>
                 </li>
-                {/* 🔹 Watchlist Link Added */}
                 <li>
                   <Link
                     to="/watchlist"
@@ -249,6 +244,7 @@ const Navbar = () => {
           </div>
         )}
 
+        {/* Login/Register buttons */}
         {!loading && !user && (
           <div className="hidden lg:flex gap-2">
             <Link

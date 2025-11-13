@@ -40,7 +40,7 @@ const UpdateMovies = () => {
       addedBy: form.addedBy.value,
     };
 
-    fetch(`http://localhost:3000/movies/update/${_id}`, {
+    fetch(`https://cineverse-server-rosy.vercel.app/movies/update/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -51,17 +51,17 @@ const UpdateMovies = () => {
       .then((data) => {
         console.log("Updated Movie:", data);
 
-         Swal.fire({
-                   position: "center",
-                  title: "Updated!",
-                  text:  `'${form.title.value}' has been updated`,
-                  icon: "success",
-                  background: "#111",
-                  color: "#fff",
-                  confirmButtonColor: "#d33",
-                  timer: 2000,
-                  showConfirmButton: false,
-                });
+        Swal.fire({
+          position: "center",
+          title: "Updated!",
+          text: `'${form.title.value}' has been updated`,
+          icon: "success",
+          background: "#111",
+          color: "#fff",
+          confirmButtonColor: "#d33",
+          timer: 2000,
+          showConfirmButton: false,
+        });
       })
       .catch((err) => console.error(err));
   };

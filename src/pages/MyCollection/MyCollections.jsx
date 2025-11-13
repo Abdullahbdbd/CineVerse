@@ -11,7 +11,9 @@ const MyCollections = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myCollection?addedBy=${user.email}`)
+      fetch(
+        `https://cineverse-server-rosy.vercel.app/myCollection?addedBy=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setMyColl(data))
         .catch((err) => console.error("Error loading collections:", err))
@@ -34,7 +36,9 @@ const MyCollections = () => {
       color: "#fff",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/movies/${id}`, { method: "DELETE" })
+        fetch(`https://cineverse-server-rosy.vercel.app/movies/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {

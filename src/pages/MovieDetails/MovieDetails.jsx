@@ -36,7 +36,9 @@ const MovieDetails = () => {
       color: "#fff",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/movies/${id}`, { method: "DELETE" })
+        fetch(`https://cineverse-server-rosy.vercel.app/movies/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
@@ -79,11 +81,14 @@ const MovieDetails = () => {
       },
     };
 
-    const res = await fetch("http://localhost:3000/watchlist", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(movieData),
-    });
+    const res = await fetch(
+      "https://cineverse-server-rosy.vercel.app/watchlist",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(movieData),
+      }
+    );
 
     const data = await res.json();
     if (res.ok) {

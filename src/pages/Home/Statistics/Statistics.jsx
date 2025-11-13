@@ -6,13 +6,13 @@ const Statistics = () => {
   const [allMovies, setAllMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://cineverse-server-rosy.vercel.app/users")
       .then((res) => res.json())
       .then((data) => setAllUser(data));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/movies")
+    fetch("https://cineverse-server-rosy.vercel.app/movies")
       .then((res) => res.json())
       .then((data) => setAllMovies(data));
   }, []);

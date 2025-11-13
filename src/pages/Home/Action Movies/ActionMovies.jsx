@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import ActionMovie from "./ActionMovie";
 
 const ActionMovies = () => {
-  const [actionMovie, setActionMovie]=useState([]);
+  const [actionMovie, setActionMovie] = useState([]);
 
-  useEffect(()=>{
-    fetch('http://localhost:3000/actionMovies')
-    .then(res=>res.json())
-    .then(data=> setActionMovie(data))
-  },[])
+  useEffect(() => {
+    fetch("https://cineverse-server-rosy.vercel.app/actionMovies")
+      .then((res) => res.json())
+      .then((data) => setActionMovie(data));
+  }, []);
 
   return (
     <div className="mb-10 px-4">

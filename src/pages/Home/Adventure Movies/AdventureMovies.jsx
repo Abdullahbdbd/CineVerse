@@ -5,7 +5,7 @@ const AdventureMovies = () => {
   const [adventureMovies, setAdventureMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/adventureMovies")
+    fetch("https://cineverse-server-rosy.vercel.app/adventureMovies")
       .then((res) => res.json())
       .then((data) => setAdventureMovies(data));
   }, []);

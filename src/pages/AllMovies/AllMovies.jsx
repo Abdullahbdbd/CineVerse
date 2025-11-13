@@ -16,7 +16,7 @@ const AllMovies = () => {
   const fetchMovies = async () => {
     try {
       setLoading(true);
-      let url = "http://localhost:3000/movies";
+      let url = "https://cineverse-server-rosy.vercel.app/movies";
 
       const params = new URLSearchParams();
       if (selectedGenres.length > 0)

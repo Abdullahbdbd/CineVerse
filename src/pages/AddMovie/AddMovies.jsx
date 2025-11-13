@@ -24,7 +24,7 @@ const AddMovies = () => {
       addedBy: user?.email,
     };
 
-    fetch("http://localhost:3000/movies", {
+    fetch("https://cineverse-server-rosy.vercel.app/movies", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,9 +36,9 @@ const AddMovies = () => {
         console.log(data);
 
         Swal.fire({
-           position: "center",
+          position: "center",
           title: "Added!",
-          text:  `'${form.title.value}' has been added`,
+          text: `'${form.title.value}' has been added`,
           icon: "success",
           background: "#111",
           color: "#fff",

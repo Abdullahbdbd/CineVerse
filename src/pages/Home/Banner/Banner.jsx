@@ -17,7 +17,7 @@ const Banner = () => {
 
   useEffect(() => {
     setLoadingMovies(true);
-    fetch("http://localhost:3000/movies")
+    fetch("https://cineverse-server-rosy.vercel.app/movies")
       .then((res) => res.json())
       .then((data) => {
         setMovies(data);

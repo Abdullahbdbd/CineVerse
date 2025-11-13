@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/movies/:id",
         loader: async ({ params }) => {
-          const res = await fetch(`http://localhost:3000/movies/${params.id}`);
+          const res = await fetch(`https://cineverse-server-rosy.vercel.app/movies/${params.id}`);
           const movie = await res.json();
 
           if (!res.ok || !movie?._id)
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: "/movies/update/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/movies/update/${params.id}`),
+          fetch(`https://cineverse-server-rosy.vercel.app/movies/update/${params.id}`),
         element: (
           <PrivateRoute>
             <UpdateMovies></UpdateMovies>

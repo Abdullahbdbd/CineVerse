@@ -10,7 +10,7 @@ const Register = () => {
     useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-   const location = useLocation();
+  const location = useLocation();
 
   // Email/password register
   const handleCreateUser = async (e) => {
@@ -46,7 +46,7 @@ const Register = () => {
       await updateUser({ displayName: name, photoURL: photo });
       setUser({ ...res.user, displayName: name, photoURL: photo });
 
-      await fetch("http://localhost:3000/users", {
+      await fetch("https://cineverse-server-rosy.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -58,7 +58,7 @@ const Register = () => {
 
       toast.success("Welcome to CineVerse! Your account has been created");
       e.target.reset();
-       navigate(`${location.state ? location.state : "/"}`);
+      navigate(`${location.state ? location.state : "/"}`);
     } catch (err) {
       toast.error(err.message);
     } finally {
@@ -67,39 +67,36 @@ const Register = () => {
   };
 
   // Google register
- const handleCreateGoogleUser = async () => {
-  setLoading(true);
-  try {
-    const res = await googleSignIn();
+  const handleCreateGoogleUser = async () => {
+    setLoading(true);
+    try {
+      const res = await googleSignIn();
 
-    // setUser here so navbar immediately sees it
-    setUser({
-      displayName: res.user.displayName,
-      photoURL: res.user.photoURL,
-      email: res.user.email,
-    });
-
-    await fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: res.user.email,
+      // setUser here so navbar immediately sees it
+      setUser({
         displayName: res.user.displayName,
         photoURL: res.user.photoURL,
-      }),
-    });
+        email: res.user.email,
+      });
 
-    toast.success("Welcome to CineVerse! Your account has been created");
-     navigate(`${location.state ? location.state : "/"}`);
-  } catch (err) {
-    toast.error(err.message);
-  } finally {
-    setLoading(false);
-  }
-};
+      await fetch("https://cineverse-server-rosy.vercel.app/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: res.user.email,
+          displayName: res.user.displayName,
+          photoURL: res.user.photoURL,
+        }),
+      });
 
-
-
+      toast.success("Welcome to CineVerse! Your account has been created");
+      navigate(`${location.state ? location.state : "/"}`);
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Show loader page if loading
   if (loading) return <LoaderPage />;

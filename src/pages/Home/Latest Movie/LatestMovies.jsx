@@ -5,7 +5,7 @@ const LatestMovies = () => {
   const [latestMovies, setLatestMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/latestMovie")
+    fetch("https://cineverse-server-rosy.vercel.app/latestMovie")
       .then((res) => res.json())
       .then((data) => setLatestMovies(data));
   }, []);
