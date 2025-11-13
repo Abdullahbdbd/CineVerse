@@ -45,7 +45,7 @@ CineVerse is a comprehensive **movie management system** where users can browse,
 ## 🚀 Deployment
 
 - **Client-side:** [Firebase Hosting](https://cineverse-clint.web.app)  
-- **Server-side:** Vercel → *(https://cineverse-server-rosy.vercel.app)*  
+- **Server-side:** [Vercel](https://cineverse-server-rosy.vercel.app)*  
 
 ---
 
