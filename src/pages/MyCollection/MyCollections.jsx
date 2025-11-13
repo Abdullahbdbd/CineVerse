@@ -9,7 +9,6 @@ const MyCollections = () => {
   const [myColl, setMyColl] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 🧩 Load user's added movies
   useEffect(() => {
     if (user?.email) {
       fetch(`http://localhost:3000/myCollection?addedBy=${user.email}`)
@@ -22,7 +21,6 @@ const MyCollections = () => {
     }
   }, [user?.email]);
 
-  // Delete movie function
   const handleDeleteMovie = (id, title) => {
     Swal.fire({
       title: "Are you sure?",
@@ -36,15 +34,11 @@ const MyCollections = () => {
       color: "#fff",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/movies/${id}`, {
-          method: "DELETE",
-        })
+        fetch(`http://localhost:3000/movies/${id}`, { method: "DELETE" })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              const remaining = myColl.filter((movie) => movie._id !== id);
-              setMyColl(remaining);
-
+              setMyColl((prev) => prev.filter((movie) => movie._id !== id));
               Swal.fire({
                 title: "Deleted!",
                 text: `"${title}" has been removed.`,
@@ -61,20 +55,17 @@ const MyCollections = () => {
     });
   };
 
-  // Loading
-  if (loading) {
-    return <LoaderPage />;
-  }
+  if (loading) return <LoaderPage />;
 
   return (
-    <div className="w-[90%] md:w-[70%] mx-auto py-25 text-white min-h-screen">
+    <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto py-25 text-white min-h-screen">
       <h2 className="text-2xl font-semibold mb-6 text-center md:text-left border-l-3 border-red-600 pl-2">
         My Collection:
       </h2>
 
       {myColl.length === 0 ? (
-        <div className="flex flex-col justify-center items-center h-[60vh] text-gray-400">
-          <p className="text-lg mb-4">🎬 You haven't added any movies yet.</p>
+        <div className="flex flex-col justify-center items-center h-[60vh] text-gray-400 gap-4">
+          <p className="text-lg">🎬 You haven't added any movies yet.</p>
           <a
             href="/addMovies"
             className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition-all duration-300"
@@ -83,7 +74,7 @@ const MyCollections = () => {
           </a>
         </div>
       ) : (
-        <div className="grid gap-5">
+        <div className="flex flex-col gap-4">
           {myColl.map((movie) => (
             <MyCollection
               key={movie._id}

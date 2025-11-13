@@ -18,6 +18,8 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  console.log(user);
+  
 
   // create user
   const createUser = (email, password) => {
@@ -76,7 +78,7 @@ const AuthProvider = ({ children }) => {
     updateUser,
   };
 
-  return <AuthContext value={authData}>{children}</AuthContext>;
+  return <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;

@@ -1,14 +1,16 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaGoogle, FaSpinner } from "react-icons/fa";
 import LoaderPage from "../../components/Spinner/LoaderPage";
 
 const Register = () => {
-  const { createUser, googleSignIn, setUser, updateUser } = useContext(AuthContext);
+  const { createUser, googleSignIn, setUser, updateUser } =
+    useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+   const location = useLocation();
 
   // Email/password register
   const handleCreateUser = async (e) => {
@@ -56,7 +58,7 @@ const Register = () => {
 
       toast.success("Welcome to CineVerse! Your account has been created");
       e.target.reset();
-      navigate("/");
+       navigate(`${location.state ? location.state : "/"}`);
     } catch (err) {
       toast.error(err.message);
     } finally {
@@ -65,37 +67,42 @@ const Register = () => {
   };
 
   // Google register
-  const handleCreateGoogleUser = async () => {
-    setLoading(true);
-    try {
-      const res = await googleSignIn();
-      setUser({
+ const handleCreateGoogleUser = async () => {
+  setLoading(true);
+  try {
+    const res = await googleSignIn();
+
+    // setUser here so navbar immediately sees it
+    setUser({
+      displayName: res.user.displayName,
+      photoURL: res.user.photoURL,
+      email: res.user.email,
+    });
+
+    await fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: res.user.email,
         displayName: res.user.displayName,
         photoURL: res.user.photoURL,
-        email: res.user.email,
-      });
+      }),
+    });
 
-      await fetch("http://localhost:3000/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: res.user.email,
-          displayName: res.user.displayName,
-          photoURL: res.user.photoURL,
-        }),
-      });
+    toast.success("Welcome to CineVerse! Your account has been created");
+     navigate(`${location.state ? location.state : "/"}`);
+  } catch (err) {
+    toast.error(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
-      toast.success("Welcome to CineVerse! Your account has been created ");
-      navigate("/");
-    } catch (err) {
-      toast.error(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+
+
 
   // Show loader page if loading
-  if (loading) return <LoaderPage/>;
+  if (loading) return <LoaderPage />;
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4 mb-10 pt-25">
@@ -160,7 +167,9 @@ const Register = () => {
             type="submit"
             className="w-full py-2 mt-2 bg-red-600 hover:bg-red-700 rounded-lg font-semibold text-white text-lg shadow-lg transition-all flex items-center justify-center gap-2"
           >
-            <FaSpinner className={`animate-spin ${loading ? "inline-block" : "hidden"}`} />
+            <FaSpinner
+              className={`animate-spin ${loading ? "inline-block" : "hidden"}`}
+            />
             Register
           </button>
 

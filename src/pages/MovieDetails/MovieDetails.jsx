@@ -1,12 +1,12 @@
-import React, { use } from "react";
-import { FaStar } from "react-icons/fa";
+import React, { useContext } from "react";
+import { FaStar, FaRegBookmark } from "react-icons/fa";
 import { Link, useLoaderData, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const MovieDetails = () => {
-  const { user } = use(AuthContext);
-  const navigate=useNavigate();
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     _id,
     title,
@@ -23,7 +23,6 @@ const MovieDetails = () => {
     addedBy,
   } = useLoaderData();
 
- // delete movies
   const handleDeleteMovie = (id, title) => {
     Swal.fire({
       title: "Are you sure?",
@@ -56,9 +55,59 @@ const MovieDetails = () => {
     });
   };
 
+  const handleAddToWatchlist = async () => {
+    if (!user) {
+      return Swal.fire({
+        title: "Login Required",
+        text: "Please log in to add movies to your watchlist.",
+        icon: "info",
+        background: "#111",
+        color: "#fff",
+        confirmButtonColor: "#3085d6",
+      });
+    }
+
+    const movieData = {
+      email: user.email,
+      movie: {
+        _id,
+        title,
+        posterUrl,
+        genre,
+        rating,
+        releaseYear,
+      },
+    };
+
+    const res = await fetch("http://localhost:3000/watchlist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(movieData),
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      Swal.fire({
+        title: "Added!",
+        text: `"${title}" has been added to your Watchlist.`,
+        icon: "success",
+        background: "#111",
+        color: "#fff",
+        confirmButtonColor: "#10b981",
+      });
+    } else {
+      Swal.fire({
+        title: "Oops!",
+        text: data.message || "Something went wrong.",
+        icon: "error",
+        background: "#111",
+        color: "#fff",
+      });
+    }
+  };
+
   return (
-    <div className="text-white min-h-screen flex flex-col py-10 px-4">
-      {/* Container width 60% */}
+    <div className="text-white min-h-screen flex flex-col py-20 px-4">
       <div className="w-full">
         {/* Movie Info Section */}
         <div className="md:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
@@ -73,7 +122,11 @@ const MovieDetails = () => {
 
           {/* Movie Info */}
           <div className="space-y-3 h-[350px]">
-            <h1 className="text-2xl font-semibold">{title}</h1>
+            {/* Title + Watchlist Button */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <h1 className="text-2xl font-semibold">{title}</h1>
+            </div>
+
             <div className="flex items-center gap-3 text-gray-400 text-sm">
               <span>{releaseYear}</span>
               <span className="flex items-center gap-1 text-yellow-400">
@@ -94,17 +147,20 @@ const MovieDetails = () => {
               {country}
             </p>
             <p className="text-gray-400 text-sm">
-              <span className="font-medium text-white">Language: </span>{" "}
+              <span className="font-medium text-white">Language:</span>{" "}
               {language}
             </p>
 
+            <button
+              onClick={handleAddToWatchlist}
+              className="bg-red-600 text-xs sm:text-sm px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition hover:bg-red-700"
+            >
+              <FaRegBookmark className="w-4 h-4" /> Add to Watchlist
+            </button>
 
-            {/* update and delete btn */}
-        
-             {
-              addedBy===user?.email &&
-
-               <div className="h-28 flex flex-row items-end gap-2 mt-3">
+            {/* Update & Delete (only for added user) */}
+            {addedBy === user?.email && (
+              <div className="flex flex-row gap-2 mt-3">
                 <Link
                   to={`/movies/update/${_id}`}
                   className="bg-gray-700 hover:bg-gray-500 text-xs sm:text-sm px-4 py-2 rounded-lg transition font-medium"
@@ -118,9 +174,7 @@ const MovieDetails = () => {
                   Delete
                 </button>
               </div>
-             }
-            
-
+            )}
           </div>
         </div>
 

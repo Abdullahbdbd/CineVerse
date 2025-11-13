@@ -1,13 +1,21 @@
-import React, { use } from "react";
+import React, { useEffect, useState } from "react";
 import AdventureMovie from "./AdventureMovie";
 
-const AdventureMovies = ({ adventureMoviesPromise }) => {
-  const adventureMovies = use(adventureMoviesPromise);
+const AdventureMovies = () => {
+  const [adventureMovies, setAdventureMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/adventureMovies")
+      .then((res) => res.json())
+      .then((data) => setAdventureMovies(data));
+  }, []);
 
   return (
-    <div className='mb-10'>
+    <div className="mb-10 px-4">
       <div className="mb-5 border-l-3 border-red-600">
-        <h2 className="pl-2 font-medium text-xl">Adventure Movies</h2>
+        <h2 className="pl-2 font-medium text-xl text-white">
+          Adventure Movies
+        </h2>
       </div>
 
       <AdventureMovie movies={adventureMovies} />

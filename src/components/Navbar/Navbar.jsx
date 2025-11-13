@@ -1,12 +1,14 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user, logOut, loading } = use(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  console.log(user);
+  
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -185,19 +187,19 @@ const Navbar = () => {
 
         {!loading && user && (
           <div className="relative">
-            {/* Avatar Button */}
             <button
               onClick={() => setOpen(!open)}
               className="w-[35px] h-[35px] rounded-full overflow-hidden border-2 border-red-600 focus:outline-none"
             >
-              <img
-                src={
-                  user?.photoURL ||
-                  "https://i.ibb.co/3fJbMmp/default-avatar.png"
-                }
-                alt={user?.displayName || "User"}
-                className="w-full h-full object-cover"
-              />
+              {user && user.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  title={user.displayName}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-gray-700 rounded-full"></div>
+              )}
             </button>
 
             {/* Dropdown Menu */}
@@ -219,6 +221,16 @@ const Navbar = () => {
                     onClick={() => setOpen(false)}
                   >
                     My Collection
+                  </Link>
+                </li>
+                {/* 🔹 Watchlist Link Added */}
+                <li>
+                  <Link
+                    to="/watchlist"
+                    className="block px-4 py-2 text-white hover:bg-red-600 transition-all"
+                    onClick={() => setOpen(false)}
+                  >
+                    My Watchlist
                   </Link>
                 </li>
                 <li>

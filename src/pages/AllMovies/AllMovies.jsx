@@ -1,3 +1,4 @@
+// AllMovies.jsx
 import React, { useEffect, useState } from "react";
 import Movies from "./Movies";
 import LoaderPage from "../../components/Spinner/LoaderPage";
@@ -49,7 +50,6 @@ const AllMovies = () => {
 
   const handleFilter = () => fetchMovies();
 
-  // UI Starts
   if (loading) return <LoaderPage />;
   if (error)
     return (
@@ -62,7 +62,7 @@ const AllMovies = () => {
   return (
     <div className="w-[95%] mx-auto py-20 text-white">
       {/* Filter Section */}
-      <div className="bg-[#1a1a1a] p-4 rounded-lg mb-6 flex flex-wrap gap-4 justify-between">
+      <div className="bg-[#1a1a1a] p-4 rounded-lg mb-6 flex flex-col sm:flex-row flex-wrap gap-4 justify-between">
         <div className="flex flex-wrap gap-3">
           {["Action", "Drama", "Comedy", "Horror", "Sci-Fi", "Adventure"].map(
             (genre) => (
@@ -81,7 +81,7 @@ const AllMovies = () => {
           )}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 mt-2 sm:mt-0">
           <input
             type="number"
             placeholder="Min Rating"

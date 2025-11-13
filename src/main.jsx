@@ -17,6 +17,7 @@ import MyCollections from "./pages/MyCollection/MyCollections.jsx";
 import AddMovies from "./pages/AddMovie/AddMovies.jsx";
 import UpdateMovies from "./pages/UpdateMovie/UpdateMovies.jsx";
 import Profile from "./pages/Profile/Profile.Jsx";
+import Watchlist from "./pages/Watchlist/Watchlists.jsx";
 
 const router = createBrowserRouter([
   {
@@ -80,9 +81,13 @@ const router = createBrowserRouter([
         Component: Register,
       },
       {
-        path:'/profile',
-        Component:Profile
-      }
+        path: "/profile",
+        Component: Profile,
+      },
+      {
+        path: "/watchList",
+        Component: Watchlist,
+      },
     ],
   },
   {

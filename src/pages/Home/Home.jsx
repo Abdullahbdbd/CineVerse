@@ -10,9 +10,6 @@ import LatestMovies from './Latest Movie/LatestMovies';
 import Statistics from './Statistics/Statistics';
 
 const topMoviePromise=fetch('http://localhost:3000/topMovies').then(res=>res.json());
-const actionMoviesPromise=fetch('http://localhost:3000/actionMovies').then(res=>res.json());
-const dramaMoviesPromise=fetch('http://localhost:3000/dramaMovies').then(res=>res.json());
-const adventureMoviesPromise=fetch('http://localhost:3000/adventureMovies').then(res=>res.json());
 
 const Home = () => {
     return (
@@ -22,9 +19,9 @@ const Home = () => {
             <Statistics></Statistics>
             <TopRatedMovies topMoviePromise={topMoviePromise}></TopRatedMovies>
             <LatestMovies></LatestMovies>
-            <ActionMovies actionMoviesPromise={actionMoviesPromise}></ActionMovies>
-            <AdventureMovies adventureMoviesPromise={adventureMoviesPromise}></AdventureMovies>
-            <DramaMovies dramaMoviesPromise={dramaMoviesPromise}></DramaMovies>
+            <ActionMovies></ActionMovies>
+            <AdventureMovies></AdventureMovies>
+            <DramaMovies></DramaMovies>
             <AboutPlatform></AboutPlatform>
            </div>
             <Animation></Animation>
