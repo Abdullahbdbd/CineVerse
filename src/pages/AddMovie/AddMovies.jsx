@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddMovies = () => {
   const { user } = use(AuthContext);
@@ -20,7 +21,7 @@ const AddMovies = () => {
       country: form.country.value,
       plotSummary: form.plotSummary.value,
       created_at: new Date(),
-      addedBy: user?.email
+      addedBy: user?.email,
     };
 
     fetch("http://localhost:3000/movies", {
@@ -33,11 +34,24 @@ const AddMovies = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        e.target.reset();      });
+
+        Swal.fire({
+           position: "center",
+          title: "Added!",
+          text:  `'${form.title.value}' has been added`,
+          icon: "success",
+          background: "#111",
+          color: "#fff",
+          confirmButtonColor: "#d33",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+        e.target.reset();
+      });
   };
 
   return (
-    <div className="min-h-screen text-white flex justify-center items-center">
+    <div className="min-h-screen text-white flex justify-center items-center py-25">
       <form
         onSubmit={handleAddMovies}
         className="bg-[#1a1a1a] p-8 rounded-2xl w-[90%] max-w-3xl shadow-lg"

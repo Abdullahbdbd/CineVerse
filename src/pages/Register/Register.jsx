@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
-import { FaGoogle } from "react-icons/fa";
+import { FaGoogle, FaSpinner } from "react-icons/fa";
+import LoaderPage from "../../components/Spinner/LoaderPage";
 
 const Register = () => {
   const { createUser, googleSignIn, setUser, updateUser } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   // Email/password register
-  const handleCreateUser = (e) => {
+  const handleCreateUser = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     const name = e.target.name.value;
     const photo = e.target.photo.value;
     const email = e.target.email.value;
@@ -21,87 +25,80 @@ const Register = () => {
 
     if (password.length < 6) {
       toast.error("Password should be at least 6 characters long");
+      setLoading(false);
       return;
     }
     if (!upperCase.test(password)) {
       toast.error("Password must contain at least one uppercase letter");
+      setLoading(false);
       return;
     }
     if (!lowerCase.test(password)) {
       toast.error("Password must contain at least one lowercase letter");
+      setLoading(false);
       return;
     }
 
-    createUser(email, password)
-      .then((res) => {
-        // Update Firebase profile
-        updateUser({
+    try {
+      const res = await createUser(email, password);
+      await updateUser({ displayName: name, photoURL: photo });
+      setUser({ ...res.user, displayName: name, photoURL: photo });
+
+      await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: res.user.email,
           displayName: name,
           photoURL: photo,
-        });
+        }),
+      });
 
-        // Set user in context
-        setUser({ ...res.user, displayName: name, photoURL: photo });
-
-        // Add user to database
-        const newUser = {
-          email: res.user.email,
-          displayName: name, // use the name entered by user
-          photoURL: photo,   // use the photo entered by user
-        };
-
-        fetch("http://localhost:3000/users", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        })
-          .then((res) => res.json())
-          .then((data) => console.log("User added:", data))
-          .catch((err) => console.error(err));
-
-        toast.success("Register Complete");
-        e.target.reset();
-        navigate("/");
-      })
-      .catch((err) => toast.error(err.message));
+      toast.success("Welcome to CineVerse! Your account has been created");
+      e.target.reset();
+      navigate("/");
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Google register
-  const handleCreateGoogleUser = () => {
-    googleSignIn()
-      .then((res) => {
-        setUser({
+  const handleCreateGoogleUser = async () => {
+    setLoading(true);
+    try {
+      const res = await googleSignIn();
+      setUser({
+        displayName: res.user.displayName,
+        photoURL: res.user.photoURL,
+        email: res.user.email,
+      });
+
+      await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: res.user.email,
           displayName: res.user.displayName,
           photoURL: res.user.photoURL,
-          email: res.user.email,
-        });
+        }),
+      });
 
-        // Add user to database
-        const newUser = {
-          email: res.user.email,
-          displayName: res.user.displayName,
-          photoURL: res.user.photoURL,
-        };
-
-        fetch("http://localhost:3000/users", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newUser),
-        })
-          .then((res) => res.json())
-          .then((data) => console.log("Google user added:", data))
-          .catch((err) => console.error(err));
-
-        toast.success("Google Registration Successful");
-        navigate("/");
-      })
-      .catch((err) => toast.error(err.message));
+      toast.success("Welcome to CineVerse! Your account has been created ");
+      navigate("/");
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
+  // Show loader page if loading
+  if (loading) return <LoaderPage/>;
+
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 mb-10">
+    <div className="flex items-center justify-center min-h-screen px-4 mb-10 pt-25">
       <div className="w-full max-w-sm bg-[#1b1b1b] shadow-2xl rounded-2xl p-6 text-white relative overflow-hidden">
         {/* Background glow */}
         <div className="absolute -top-16 -right-16 w-48 h-48 bg-red-600 rounded-full opacity-20 blur-3xl animate-pulse"></div>
@@ -161,8 +158,9 @@ const Register = () => {
           {/* Register Button */}
           <button
             type="submit"
-            className="w-full py-2 mt-2 bg-red-600 hover:bg-red-700 rounded-lg font-semibold text-white text-lg shadow-lg transition-all"
+            className="w-full py-2 mt-2 bg-red-600 hover:bg-red-700 rounded-lg font-semibold text-white text-lg shadow-lg transition-all flex items-center justify-center gap-2"
           >
+            <FaSpinner className={`animate-spin ${loading ? "inline-block" : "hidden"}`} />
             Register
           </button>
 
@@ -177,7 +175,7 @@ const Register = () => {
           <button
             type="button"
             onClick={handleCreateGoogleUser}
-            className="w-full flex items-center justify-center gap-1 py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition-all shadow-md"
+            className="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-white text-black font-semibold hover:bg-gray-200 transition-all shadow-md"
           >
             <FaGoogle className="w-5 h-5" />
             Register with Google

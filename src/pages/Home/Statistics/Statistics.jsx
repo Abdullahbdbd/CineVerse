@@ -20,7 +20,7 @@ const Statistics = () => {
   },[])
 
   return (
-    <section className="my-20">
+    <section className="my-10">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <h2 className="text-4xl font-bold text-white text-center mb-12">

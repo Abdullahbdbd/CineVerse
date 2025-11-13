@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -6,25 +6,39 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./Banner.css";
 import { FaPlay, FaStar } from "react-icons/fa";
+import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import LoaderPage from "../../../components/Spinner/LoaderPage";
 
 const Banner = () => {
   const [movies, setMovies] = useState([]);
+  const [loadingMovies, setLoadingMovies] = useState(true);
   const [swiperInstance, setSwiperInstance] = useState(null);
+  const { loading: authLoading } = useContext(AuthContext);
 
   useEffect(() => {
+    setLoadingMovies(true);
     fetch("http://localhost:3000/movies")
       .then((res) => res.json())
-      .then((data) => setMovies(data))
-      .catch((err) => console.error("Error fetching movies:", err));
+      .then((data) => {
+        setMovies(data);
+        setLoadingMovies(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching movies:", err);
+        setLoadingMovies(false);
+      });
   }, []);
 
   useEffect(() => {
     if (swiperInstance && movies.length > 0) {
-      setTimeout(() => {
-        swiperInstance.slideToLoop(0, 0);
-      }, 100);
+      setTimeout(() => swiperInstance.slideToLoop(0, 0), 100);
     }
   }, [swiperInstance, movies]);
+
+  // ✅ Show loader while fetching movies or auth loading
+  if (loadingMovies || authLoading) {
+    return <LoaderPage />;
+  }
 
   return (
     <div className="banner-container">

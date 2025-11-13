@@ -16,6 +16,7 @@ import PrivateRoute from "./routes/PrivateRoute/PrivateRoute.jsx";
 import MyCollections from "./pages/MyCollection/MyCollections.jsx";
 import AddMovies from "./pages/AddMovie/AddMovies.jsx";
 import UpdateMovies from "./pages/UpdateMovie/UpdateMovies.jsx";
+import Profile from "./pages/Profile/Profile.Jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,9 +33,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/movies/:id",
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/movies/${params.id}`),
-        element: <MovieDetails></MovieDetails>,
+        loader: async ({ params }) => {
+          const res = await fetch(`http://localhost:3000/movies/${params.id}`);
+          const movie = await res.json();
+
+          if (!res.ok || !movie?._id)
+            throw new Response("Movie not found", { status: 404 });
+
+          return movie;
+        },
+        element: <MovieDetails />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/myCollection",
@@ -46,7 +55,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/movies/update/:id",
-        loader:({params})=>fetch(`http://localhost:3000/movies/update/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/movies/update/${params.id}`),
         element: (
           <PrivateRoute>
             <UpdateMovies></UpdateMovies>
@@ -69,6 +79,10 @@ const router = createBrowserRouter([
         path: "/register",
         Component: Register,
       },
+      {
+        path:'/profile',
+        Component:Profile
+      }
     ],
   },
   {

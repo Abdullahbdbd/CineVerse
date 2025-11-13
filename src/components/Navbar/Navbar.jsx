@@ -1,13 +1,22 @@
-import React, { useContext } from "react";
-import { Link, NavLink } from "react-router";
+import React, { use, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
-import { FaUserCircle } from "react-icons/fa";
-import "./Navbar.css";
 
 const Navbar = () => {
-  const { user, logOut, loading } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut, loading } = use(AuthContext);
+  const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
+  };
 
   const handleLogOut = () => {
     logOut()
@@ -67,17 +76,18 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-black/80 rounded-box mt-3 p-2 shadow-lg w-52"
           >
             {links}
-            {user && (
-              <li className="mt-2">
-                <button
-                  onClick={handleLogOut}
-                  className="w-full text-left px-2 py-1 text-sm rounded-md bg-red-600 hover:bg-red-700 text-white transition-all"
-                >
-                  Log Out
-                </button>
-              </li>
-            )}
-            {!user && (
+            {user ? (
+              <>
+                <li className="mt-2">
+                  <button
+                    onClick={handleLogOut}
+                    className="w-full text-left px-2 py-1 text-sm rounded-md bg-red-600 hover:bg-red-700 text-white transition-all"
+                  >
+                    Log Out
+                  </button>
+                </li>
+              </>
+            ) : (
               <li className="flex gap-2 mt-2">
                 <NavLink
                   to="/login"
@@ -118,30 +128,116 @@ const Navbar = () => {
       </div>
 
       {/* Navbar End */}
-      <div className="navbar-end flex items-center gap-3 ml-auto">
+      <div className="navbar-end flex items-center gap-3 ml-auto relative">
+        <label className="toggle text-base-content">
+          <input
+            onChange={(e) => handleTheme(e.target.checked)}
+            type="checkbox"
+            defaultChecked={localStorage.getItem("theme") === "dark"}
+            value="synthwave"
+            className="theme-controller"
+          />
+
+          <svg
+            aria-label="sun"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="2"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </g>
+          </svg>
+
+          <svg
+            aria-label="moon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              strokeWidth="2"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </g>
+          </svg>
+        </label>
+
         {loading && (
           <span className="loading loading-spinner text-error"></span>
         )}
+
         {!loading && user && (
-         <img
-         className="w-[35px] h-[35px] rounded-full"
-            src={user?.photoURL || user?.image || "https://i.ibb.co/3fJbMmp/default-avatar.png"}
-            alt={'Not Found'}
-            title={user?.displayName || user?.name || "User"}
-          />
+          <div className="relative">
+            {/* Avatar Button */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="w-[35px] h-[35px] rounded-full overflow-hidden border-2 border-red-600 focus:outline-none"
+            >
+              <img
+                src={
+                  user?.photoURL ||
+                  "https://i.ibb.co/3fJbMmp/default-avatar.png"
+                }
+                alt={user?.displayName || "User"}
+                className="w-full h-full object-cover"
+              />
+            </button>
+
+            {/* Dropdown Menu */}
+            {open && (
+              <ul className="absolute right-0 mt-2 w-44 bg-[#1a1a1a] rounded-lg shadow-lg z-50 overflow-hidden">
+                <li>
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-white hover:bg-red-600 transition-all"
+                    onClick={() => setOpen(false)}
+                  >
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/myCollection"
+                    className="block px-4 py-2 text-white hover:bg-red-600 transition-all"
+                    onClick={() => setOpen(false)}
+                  >
+                    My Collection
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      handleLogOut();
+                      setOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-2 text-white hover:bg-red-600 transition-all"
+                  >
+                    Log Out
+                  </button>
+                </li>
+              </ul>
+            )}
+          </div>
         )}
 
-        {user ? (
-          <>
-            <button
-              onClick={handleLogOut}
-              className="hidden lg:inline-block px-4 py-1.5 text-sm rounded-md bg-red-600 hover:bg-red-700 text-white transition-all"
-            >
-              Log Out
-            </button>
-          </>
-        ) : (
-          // Desktop logged-out buttons
+        {!loading && !user && (
           <div className="hidden lg:flex gap-2">
             <Link
               to="/login"

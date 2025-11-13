@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 
 const UpdateMovies = () => {
   const {
@@ -49,7 +50,18 @@ const UpdateMovies = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log("Updated Movie:", data);
-        alert("Movie Updated Successfully!");
+
+         Swal.fire({
+                   position: "center",
+                  title: "Updated!",
+                  text:  `'${form.title.value}' has been updated`,
+                  icon: "success",
+                  background: "#111",
+                  color: "#fff",
+                  confirmButtonColor: "#d33",
+                  timer: 2000,
+                  showConfirmButton: false,
+                });
       })
       .catch((err) => console.error(err));
   };
