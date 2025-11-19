@@ -42,18 +42,20 @@ CineVerse is a comprehensive **movie management system** where users can browse,
 
 ---
 
+## 📦 Dependencies
+
+| Category | Packages Used |
+|-----------|----------------|
+| Frontend | react-router-dom, axios, daisyui, react-icons, sweetalert2 |
+| Backend | express, cors, dotenv, mongodb |
+| Others | firebase, nodemon |
+
+---
+
 ## 🚀 Deployment
 
 - **Client-side:** [Firebase Hosting](https://cineverse-clint.web.app)  
 - **Server-side:** [Vercel](https://cineverse-server-rosy.vercel.app)
-
----
-
-## 👤 Author
-
-**Your Name / Team Name**  
-- GitHub: [Your GitHub Profile](https://github.com/Abdullahbdbd)  
-- Email: abdullahmohammad262000@gmail.com  
 
 ---
 
